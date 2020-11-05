@@ -8,8 +8,42 @@ class HangpersonGame
   # def initialize()
   # end
   
-  def initialize(word)
-    @word = word
+  attr_accessor :word , :guesses , :wrong_guesses
+  
+  def initialize(new_word)
+    @word = new_word.downcase
+    @guesses = ''
+    @wrong_guesses = ''
+  end
+  
+  def guess(letter)
+    raise ArgumentError.new('letter must exist please put the exist letter') if letter==nil || letter.empty?
+    raise ArgumentError.new('letter must be alphabet please put the alphabetic letter') if !letter.match(/[a-zA-Z]/) 
+   
+    letter.downcase!
+    return false if (@guesses + @wrong_guesses).include? letter
+    
+    @guesses += letter if @word.include? letter
+    @wrong_guesses += letter if ! @word.include? letter
+   
+  end
+  
+  def word_with_guesses
+   wwg = ''
+   @word.split('').each do |letter|
+    wwg+=letter if @guesses.include? letter
+    wwg+='-' if !@guesses.include? letter
+   end
+    return wwg
+    
+  end
+  
+  def check_win_or_lose
+    
+    return :win if word_with_guesses.match(@word)
+    return :lose if @wrong_guesses.length >= 7
+    return :play
+    
   end
 
   # You can test it by running $ bundle exec irb -I. -r app.rb
@@ -18,10 +52,11 @@ class HangpersonGame
   def self.get_random_word
     require 'uri'
     require 'net/http'
-    uri = URI('http://watchout4snakes.com/wo4snakes/Random/RandomWord')
+    uri = URI('http://watchout4snakes.com/Random/RandomWord')
     Net::HTTP.new('watchout4snakes.com').start { |http|
       return http.post(uri, "").body
     }
   end
+
 
 end
