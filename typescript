@@ -1,5 +1,5 @@
-Script started on Thu 05 Nov 2020 02:22:09 PM UTC
-[?1034h[01;32mvocstartsoft[00m:[01;34m~/environment/hw-sinatra-saas-hangperson[00m (master) $ rspec spec/hange[Kperson_game_spec.rb
+Script started on Thu 05 Nov 2020 02:29:14 PM UTC
+[?1034h[01;32mvocstartsoft[00m:[01;34m~/environment/hw-sinatra-saas-hangperson[00m (master) $ rspec spec/hangperson_game_spec.rb
 Run options: exclude {:pending=>true}
 
 HangpersonGame
@@ -30,10 +30,10 @@ HangpersonGame
 [32m    should be lose after 7 incorrect guesses[0m
 [32m    should continue play if neither win nor lose[0m
 
-Finished in 0.03397 seconds (files took 1.01 seconds to load)
+Finished in 0.01604 seconds (files took 0.44982 seconds to load)
 [32m18 examples, 0 failures[0m
 
 [01;32mvocstartsoft[00m:[01;34m~/environment/hw-sinatra-saas-hangperson[00m (master) $ exit
 exit
 
-Script done on Thu 05 Nov 2020 02:22:42 PM UTC
+Script done on Thu 05 Nov 2020 02:29:33 PM UTC

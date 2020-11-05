@@ -52,5 +52,4 @@ class HangpersonGame
     }
   end
 
-
 end
