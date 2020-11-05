@@ -19,13 +19,10 @@ class HangpersonGame
   def guess(letter)
     raise ArgumentError.new('letter must exist please put the exist letter') if letter==nil || letter.empty?
     raise ArgumentError.new('letter must be alphabet please put the alphabetic letter') if !letter.match(/[a-zA-Z]/) 
-   
     letter.downcase!
     return false if (@guesses + @wrong_guesses).include? letter
-    
     @guesses += letter if @word.include? letter
     @wrong_guesses += letter if ! @word.include? letter
-   
   end
   
   def word_with_guesses
@@ -35,15 +32,12 @@ class HangpersonGame
     wwg+='-' if !@guesses.include? letter
    end
     return wwg
-    
   end
   
   def check_win_or_lose
-    
     return :win if word_with_guesses.match(@word)
     return :lose if @wrong_guesses.length >= 7
     return :play
-    
   end
 
   # You can test it by running $ bundle exec irb -I. -r app.rb
