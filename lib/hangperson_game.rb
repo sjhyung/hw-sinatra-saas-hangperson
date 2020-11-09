@@ -17,12 +17,12 @@ class HangpersonGame
   end
   
   def guess(letter)
-    raise ArgumentError.new('letter must exist please put the exist letter') if letter==nil || letter.empty?
-    raise ArgumentError.new('letter must be alphabet please put the alphabetic letter') if !letter.match(/[a-zA-Z]/) 
+    raise ArgumentError.new('letter must exist please input the exist letter') if letter==nil || letter.empty?
+    raise ArgumentError.new('letter must be alphabet please input the alphabetic letter') if !letter.match(/[a-zA-Z]/) 
     letter.downcase!
     return false if (@guesses + @wrong_guesses).include? letter
     @guesses += letter if @word.include? letter
-    @wrong_guesses += letter if ! @word.include? letter
+    @wrong_guesses += letter if !@word.include? letter
   end
   
   def word_with_guesses
@@ -35,7 +35,7 @@ class HangpersonGame
   end
 
   def check_win_or_lose
-    return :win if word_with_guesses.split("").sort! == @word.split("").sort!
+    return :win if word_with_guesses == @word
     return :lose if @wrong_guesses.length >= 7
     return :play
   end
