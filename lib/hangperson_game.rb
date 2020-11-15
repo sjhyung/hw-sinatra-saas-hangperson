@@ -20,21 +20,9 @@ class HangpersonGame
     raise ArgumentError.new('letter must exist please input the exist letter') if letter==nil || letter.empty?
     raise ArgumentError.new('letter must be alphabet please input the alphabetic letter') if !letter.match(/[a-zA-Z]/) 
     letter.downcase!
-    # check letter and if it doesn't exist, add it in the corresponding variable
-    if @word.include?(letter) 
-      if @guesses.include?(letter)
-        return false
-      else
-        @guesses += letter
-      end
-    else 
-      if @wrong_guesses.include?(letter)
-        return false
-      else
-        @wrong_guesses += letter 
-      end
-    end
-    true
+    return false if (@guesses + @wrong_guesses).include? letter
+    @guesses += letter if @word.include? letter
+    @wrong_guesses += letter if !@word.include? letter
   end
   
   def word_with_guesses
