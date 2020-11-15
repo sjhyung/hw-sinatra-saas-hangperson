@@ -1,4 +1,4 @@
-Script started on Sun 15 Nov 2020 03:10:36 PM UTC
+Script started on Sun 15 Nov 2020 03:17:16 PM UTC
 [01;32mvocstartsoft[00m:[01;34m~/environment/hw-sinatra-saas-hangperson[00m (master) $ cucumber features
 Feature: game over
   
@@ -84,9 +84,9 @@ Feature: start new game
 
 10 scenarios ([32m10 passed[0m)
 38 steps ([32m38 passed[0m)
-0m0.385s
+0m0.384s
 Coverage report generated for Cucumber Features to /home/ec2-user/environment/hw-sinatra-saas-hangperson/coverage. 61 / 62 LOC (98.39%) covered.
 [01;32mvocstartsoft[00m:[01;34m~/environment/hw-sinatra-saas-hangperson[00m (master) $ exit
 exit
 
-Script done on Sun 15 Nov 2020 03:10:49 PM UTC
+Script done on Sun 15 Nov 2020 03:17:28 PM UTC
